@@ -19,8 +19,6 @@ The pipeline consists of:
 - **Spark**: Processes logs in micro-batches (every 10 seconds), performing:
   - Product view counts (`product_views`).
   - Action ratios (`action_counts`).
-  - Bot detection (`bot_detection`).
-  - Payment error tracking (`payment_errors`).
 - **PostgreSQL**: Stores results in tables, enabling efficient SQL queries.
 - **Matplotlib**: Visualizes data with bar charts (top products, bot IPs), pie charts (action ratios), and line charts (payment errors).
 
@@ -41,8 +39,8 @@ The pipeline consists of:
 ## Setup Instructions
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/shopeasy-pipeline.git
-   cd shopeasy-pipeline
+   git clone https://github.com/your-username/real-time-log-pipeline.git
+   cd real-time-log-pipeline
    ```
 
 2. **Start Docker services**:
@@ -80,32 +78,15 @@ The pipeline consists of:
 - **PostgreSQL Tables**:
   - `product_views`: Product view counts per 5-minute window.
   - `action_counts`: Action ratios (view, add to cart, checkout) per 5-minute window.
-  - `bot_detection`: IPs with >10 requests/minute.
-  - `payment_errors`: Payment errors (status code 500) per 5-minute window.
+
 - **Visualizations** (in `output/`):
   - `product_views.png`: Bar chart of top 5 products by views.
   - `action_counts.png`: Pie chart of action ratios.
-  - `bot_detection.png`: Bar chart of suspicious IPs.
-  - `payment_errors.png`: Line chart of payment errors over time.
+ 
 - **Sample Outputs**:
   - Top 5 Products: ![Top Products](docs/product_views.png)
   - Action Ratios: ![Action Ratios](docs/action_counts.png)
 
-## Sample Queries
-Run in PostgreSQL:
-```sql
--- Top 5 products by views
-SELECT product_id, SUM(view_count) as total_views
-FROM product_views
-GROUP BY product_id
-ORDER BY total_views DESC
-LIMIT 5;
-
--- Action ratios
-SELECT action, SUM(action_count) as total_count
-FROM action_counts
-GROUP BY action;
-```
 
 ## Challenges Overcome
 - **Multiple CSV Files**: Replaced with PostgreSQL for centralized storage, simplifying data management and queries.
@@ -119,11 +100,5 @@ GROUP BY action;
 - Implement unit tests for Spark transformations and producer logic.
 - Add monitoring with Prometheus for pipeline performance.
 
-## Demo
-Watch the pipeline in action: [YouTube Demo](https://youtube.com/your-video-link) *(Update with your link)*
 
-## License
-MIT License
 
-## Contact
-For questions, open an issue or contact me at [your-email@example.com](mailto:your-email@example.com).
