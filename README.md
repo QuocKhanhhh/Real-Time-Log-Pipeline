@@ -1,7 +1,7 @@
 # Real-Time Log Pipeline
 
 ## Overview
-**ShopEasy** is a real-time log analysis pipeline for an e-commerce platform, designed to process website logs, track user behavior, detect bots, and support business decisions. The pipeline leverages **Apache Kafka** for streaming, **Spark Structured Streaming** for processing, **PostgreSQL** for centralized storage, and **Matplotlib** for visualization, all deployed using **Docker**. This project demonstrates skills in big data processing, stream analytics, and database integration.
+This project is a real-time log analysis pipeline for an e-commerce platform, designed to process website logs, track user behavior, detect bots, and support business decisions. The pipeline leverages **Apache Kafka** for streaming, **Spark Structured Streaming** for processing, **PostgreSQL** for centralized storage, and **Matplotlib** for visualization, all deployed using **Docker**. This project demonstrates skills in big data processing, stream analytics, and database integration.
 
 ### Objectives
 - **Track User Behavior**: Analyze product views and user actions (view, add to cart, checkout).
