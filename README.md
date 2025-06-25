@@ -11,8 +11,6 @@ A real-time log analysis pipeline for **ShopEasy**, an e-commerce platform. The 
 - **Spark**: Analyzes logs, saving results to PostgreSQL:
   - `product_views`: Product view counts.
   - `action_counts`: Action ratios.
-  - `bot_detection`: IPs with >10 requests/minute.
-  - `payment_errors`: Payment errors.
 - **PostgreSQL**: Stores results in tables, replacing multiple CSV files.
 - **Matplotlib**: Visualizes data as charts.
 
@@ -29,3 +27,5 @@ A real-time log analysis pipeline for **ShopEasy**, an e-commerce platform. The 
    ```bash
    git clone https://github.com/your-username/shopeasy-pipeline.git
    cd shopeasy-pipeline
+2. Start Docker services:
+3. 
