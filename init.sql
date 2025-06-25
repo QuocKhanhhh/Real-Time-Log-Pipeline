@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS product_views (window_start TIMESTAMP, product_id TEXT, view_count INTEGER);
+CREATE TABLE IF NOT EXISTS action_counts ( window_start TIMESTAMP, action TEXT, action_count INTEGER );

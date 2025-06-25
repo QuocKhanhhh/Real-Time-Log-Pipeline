@@ -1,0 +1,7 @@
+confluent-kafka 
+faker 
+pandas 
+matplotlib 
+seaborn
+psycopg2-binary
+sqlalchemy
