@@ -1,13 +1,11 @@
 # Real-Time Log Pipeline
 
 ## Overview
-**ShopEasy** is a real-time log analysis pipeline for an e-commerce platform, designed to process website logs, track user behavior, detect bots, and support business decisions. The pipeline leverages **Apache Kafka** for streaming, **Spark Structured Streaming** for processing, **PostgreSQL** for centralized storage, and **Matplotlib** for visualization, all deployed using **Docker**. This project demonstrates skills in big data processing, stream analytics, and database integration, making it a strong addition to a data engineering portfolio.
+**ShopEasy** is a real-time log analysis pipeline for an e-commerce platform, designed to process website logs, track user behavior, detect bots, and support business decisions. The pipeline leverages **Apache Kafka** for streaming, **Spark Structured Streaming** for processing, **PostgreSQL** for centralized storage, and **Matplotlib** for visualization, all deployed using **Docker**. This project demonstrates skills in big data processing, stream analytics, and database integration.
 
 ### Objectives
 - **Track User Behavior**: Analyze product views and user actions (view, add to cart, checkout).
-- **Detect Bots**: Identify IPs with high request rates (>10 requests/minute).
 - **Support Decisions**: Provide actionable insights via SQL queries and visualizations.
-- **Replace CSV Files**: Use PostgreSQL to centralize data, replacing multiple CSV files.
 - **Simulate Real Data**: Generate realistic e-commerce logs with bot activity.
 
 ## Architecture
@@ -39,8 +37,8 @@ The pipeline consists of:
 ## Setup Instructions
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/real-time-log-pipeline.git
-   cd real-time-log-pipeline
+   git clone https://github.com/QuocKhanhhh/Real-Time-Log-Pipeline.git
+   cd Real-Time-Log-Pipeline
    ```
 
 2. **Start Docker services**:
@@ -71,7 +69,7 @@ The pipeline consists of:
 
 7. **Check PostgreSQL data**:
    ```bash
-   docker exec -it shopeasy-pipeline-postgres-1 psql -U admin -d shopeasy -c "SELECT * FROM product_views LIMIT 10;"
+   docker exec -it shopeasy-pipeline-postgres-1 psql -U admin -d web_logs -c "SELECT * FROM product_views LIMIT 10;"
    ```
 
 ## Results
